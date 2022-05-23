@@ -1,0 +1,16 @@
+{
+  "name": "term.ooo",
+  "version": "1.0.0",
+  "description": "term.ooo and wordle <br> helper",
+  "main": "base.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
