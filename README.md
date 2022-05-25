@@ -6,19 +6,15 @@
   
 Altere as constantes no início do arquivo './src/app.js':
 
-
-- Insira as letras que não fazem parte da palavra em: mustNotInclude
-
+- Insira as letras que não fazem parte da palavra em: mustExclude
 - Insira as letras que fazem parte da palavra em: mustInclude
-
 - Caso já saiba as letras iniciais, insira em: start
-
 - Caso já saiba as letras finais, insira em: end
-
 - Insira as letras que existem mas não estão na posição correta em: notInPositionX
-
 - Insira as letras que existem e estão nas posições corretas em: inPositionX
 
+**Importante!** Caso uma tentativa tenha letras repetidas (por ex. "OUTRO", com a letra "O" aparecendo duas vezes) pode ser que uma delas
+apareça como não fazendo parte da palavra e a outra sim. Neste caso, a letra "O" não deve ser colocada no "mustExclude"
 
 Execute com `npm run dev` e altere os parâmetros acima à medida em que for efetuando novas tentativas, salvando o arquivo à cada rodada para obter as sugestões.
  
