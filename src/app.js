@@ -1,19 +1,19 @@
 let { filtered } = require('./words.js');
 
-const mustNotInclude = ''.split('');
-const mustInclude = ''.split('');
-const start = '';
-const end = '';
+const mustExclude = ''.toLocaleLowerCase().split('');
+const mustInclude = ''.toLocaleLowerCase().split('');
+const start = ''.toLocaleLowerCase();
+const end = ''.toLocaleLowerCase();
 const notInPositionX = ['', '', '', '', ''];
 const inPositionX = ['', '', '', '', ''];
 
 filtered = filtered.map((x) =>
-  x.normalize('NFD').replace(/\p{Diacritic}/gu, '')
+  x.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLocaleLowerCase()
 ).sort((a, b) => a.localeCompare(b));;
 
-if (mustNotInclude.length > 0)
+if (mustExclude.length > 0)
   filtered = filtered.filter(
-    (word) => !mustNotInclude.some((x) => word.includes(x))
+    (word) => !mustExclude.some((x) => word.includes(x))
   );
 
 if (mustInclude.length > 0)
@@ -29,11 +29,11 @@ if (end.length > 0) filtered = filtered.filter((x) => x && x.endsWith(end));
 for (let x = 0; x < 5; x++) {
   if (inPositionX[x] != '')
     filtered = filtered.filter((word) =>
-      inPositionX[x].split('').every((chr) => word[x] == chr)
+      inPositionX[x].toLocaleLowerCase().split('').every((chr) => word[x] == chr)
     );
   if (notInPositionX[x] != '')
     filtered = filtered.filter(
-      (word) => !notInPositionX[x].split('').some((chr) => word[x] == chr)
+      (word) => !notInPositionX[x].toLocaleLowerCase().split('').some((chr) => word[x] == chr)
     );
 }
 
