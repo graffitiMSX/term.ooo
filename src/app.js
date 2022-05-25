@@ -1,4 +1,4 @@
-let { filtered } = require('./words.js');
+let { filtered } = require('./words');
 
 const mustExclude = ''.toLocaleLowerCase().split('');
 const mustInclude = ''.toLocaleLowerCase().split('');
